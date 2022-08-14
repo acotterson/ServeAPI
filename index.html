@@ -30,15 +30,19 @@
           <div class="row">
             <div class="form-group w-100">
               <input
-                type="city"
+                type="citySearch"
                 class="form-control"
-                id="city"
+                id="citySearch"
                 placeholder="San Diego"
               />
             </div>
           </div>
           <div class="row border-bottom border-dark">
-            <button type="submit" class="btn btn-primary w-100 mb-3">
+            <button
+              id="searchButton"
+              type="submit"
+              class="btn btn-primary w-100 mb-3"
+            >
               Search
             </button>
           </div>
@@ -84,13 +88,11 @@
             <div class="col-12">
               <div class="card">
                 <ul id="dayInfo" class="list-group list-group-flush">
-                  <li class="list-group-item h2 border-0 nameDateWeather">Cras justo odio</li>
-                  <li class="list-group-item border-0 temp">Cras justo odio</li>
-                  <li class="list-group-item border-0 wind">
-                    Dapibus ac facilisis in
-                  </li>
-                  <li class="list-group-item border-0 humid">Vestibulum at eros</li>
-                  <li class="list-group-item border-0 uvi bg-white">Vestibulum at eros</li>
+                  <li class="list-group-item h2 border-0 nameDateWeather"></li>
+                  <li class="list-group-item border-0 temp"></li>
+                  <li class="list-group-item border-0 wind"></li>
+                  <li class="list-group-item border-0 humid"></li>
+                  <li class="list-group-item border-0 uvi bg-white"></li>
                 </ul>
               </div>
             </div>
@@ -104,105 +106,105 @@
             <div class="col">
               <div class="card forecast-box">
                 <ul class="list-group list-group-flush border-0 fore1">
-                  <li class="list-group-item border-0 p-1 forecast-box date">
-                    Cras justo odio
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box weather">
-                    Cras justo odio
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box temp">
-                    Dapibus ac facilisis in
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box wind">
-                    Vestibulum at eros
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box humid">
-                    Vestibulum at eros
-                  </li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box date"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box weather"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box temp"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box wind"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box humid"
+                  ></li>
                 </ul>
               </div>
             </div>
             <div class="col">
               <div class="card forecast-box">
                 <ul class="list-group list-group-flush border-0 fore2">
-                  <li class="list-group-item border-0 p-1 forecast-box date">
-                    Cras justo odio
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box weather">
-                    Cras justo odio
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box temp">
-                    Dapibus ac facilisis in
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box wind">
-                    Vestibulum at eros
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box humid">
-                    Vestibulum at eros
-                  </li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box date"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box weather"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box temp"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box wind"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box humid"
+                  ></li>
                 </ul>
               </div>
             </div>
             <div class="col">
               <div class="card forecast-box">
                 <ul class="list-group list-group-flush border-0 fore3">
-                  <li class="list-group-item border-0 p-1 forecast-box date">
-                    Cras justo odio
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box weather">
-                    Cras justo odio
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box temp">
-                    Dapibus ac facilisis in
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box wind">
-                    Vestibulum at eros
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box humid">
-                    Vestibulum at eros
-                  </li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box date"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box weather"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box temp"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box wind"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box humid"
+                  ></li>
                 </ul>
               </div>
             </div>
             <div class="col">
               <div class="card forecast-box">
                 <ul class="list-group list-group-flush border-0 fore4">
-                  <li class="list-group-item border-0 p-1 forecast-box date">
-                    Cras justo odio
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box weather">
-                    Cras justo odio
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box temp">
-                    Dapibus ac facilisis in
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box wind">
-                    Vestibulum at eros
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box humid">
-                    Vestibulum at eros
-                  </li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box date"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box weather"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box temp"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box wind"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box humid"
+                  ></li>
                 </ul>
               </div>
             </div>
             <div class="col">
               <div class="card forecast-box">
                 <ul class="list-group list-group-flush border-0 fore5">
-                  <li class="list-group-item border-0 p-1 forecast-box date">
-                    Cras justo odio
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box weather">
-                    Cras justo odio
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box temp">
-                    Dapibus ac facilisis in
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box wind">
-                    Vestibulum at eros
-                  </li>
-                  <li class="list-group-item border-0 p-1 forecast-box humid">
-                    Vestibulum at eros
-                  </li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box date"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box weather"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box temp"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box wind"
+                  ></li>
+                  <li
+                    class="list-group-item border-0 p-1 forecast-box humid"
+                  ></li>
                 </ul>
               </div>
             </div>
