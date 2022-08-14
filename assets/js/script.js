@@ -41,17 +41,23 @@ function displayToday(data) {
     
     var uvi = data.current.uvi
     if (uvi < 3) {
-        spanColor = "#157e51";
+        spanFontColor = "text-white"
+        spanBackColor = "#157e51";
+
     } else if (uvi < 6) {
-        spanColor = "yellow";
+        spanFontColor = "text-dark";
+        spanBackColor = "yellow";
     } else if (uvi < 8) {
-        spanColor = "orange";
+        spanFontColor = "text-dark";
+        spanBackColor = "orange";
     } else if (uvi < 11) {
-        spanColor = "red";
+        spanFontColor = "text-dark";
+        spanBackColor = "red";
     } else {
-        spanColor = "purple";
+        spanFontColor = "text-white";
+        spanBackColor = "purple";
     }
-    $("#dayInfo").children(".uvi").append(`<span class="rounded text-white py-1 px-3 uvi-span" style="background-color:${spanColor};">${uvi}</span>`);
+    $("#dayInfo").children(".uvi").append(`<span class="rounded ${spanFontColor} py-1 px-3 uvi-span" style="background-color:${spanBackColor};">${uvi}</span>`);
 }
 
 function displayForecast(data) {
