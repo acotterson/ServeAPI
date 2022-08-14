@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="text-center font-weight-bolder text-white p-3">
+      <h1>Weather Dashboard</h1>
+    </header>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Search area -->
+        <div class="col-3 m-2">
+          <h2 class="row">Search for a City:</h2>
+          <div class="row">
+            <div class="form-group w-100">
+              <input
+                type="city"
+                class="form-control"
+                id="city"
+                placeholder="San Diego"
+              />
+            </div>
+          </div>
+          <div class="row border-bottom border-dark">
+            <button type="submit" class="btn btn-primary w-100 mb-3">
+              Submit
+            </button>
+          </div>
+          <div class="row">
+            <div class="list-group w-100">
+              <button
+                type="button"
+                class="list-group-item list-group-item-action mt-3 mb-2 rounded bg-light text-center"
+              >
+                The current button
+              </button>
+              <button
+                type="button"
+                class="list-group-item list-group-item-action my-2 rounded bg-light text-center"
+              >
+                A second item
+              </button>
+              <button
+                type="button"
+                class="list-group-item list-group-item-action my-2 rounded bg-light text-center"
+              >
+                A third button item
+              </button>
+              <button
+                type="button"
+                class="list-group-item list-group-item-action my-2 rounded bg-light text-center"
+              >
+                A fourth button item
+              </button>
+              <button
+                type="button"
+                class="list-group-item list-group-item-action my-2 rounded bg-light text-center"
+              >
+                A disabled button item
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <!-- Selected City Main -->
+          <div class="row my-3">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header h2">Featured</div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Forecast Section -->
+          <div class="row">
+            <div class="col-12 h4">5-Day Forecast:</div>
+          </div>
+          <!-- Forecast List -->
+          <div class="row">
+            <div class="col">
+              <div class="card">
+                <div class="card-header h5">Featured</div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header h5">Featured</div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header h5">Featured</div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header h5">Featured</div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-header h5">Featured</div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
