@@ -1,3 +1,7 @@
 header {
     background-image: linear-gradient(to right, rgb(0, 110, 255), navy);
 }
+
+.forecast-box {
+    background-color: #33475A;
+}
