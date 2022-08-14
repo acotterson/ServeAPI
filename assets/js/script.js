@@ -34,9 +34,24 @@ function displayToday(data) {
   $("#dayInfo")
     .children(".humid")
     .html("Humidity: " + data.current.humidity + " &percnt;");
+
   $("#dayInfo")
     .children(".uvi")
-    .html("UV Index: " + data.current.uvi);
+    .html("UV Index: ");
+    
+    var uvi = data.current.uvi
+    if (uvi < 3) {
+        spanColor = "#157e51";
+    } else if (uvi < 6) {
+        spanColor = "yellow";
+    } else if (uvi < 8) {
+        spanColor = "orange";
+    } else if (uvi < 11) {
+        spanColor = "red";
+    } else {
+        spanColor = "purple";
+    }
+    $("#dayInfo").children(".uvi").append(`<span class="rounded text-white py-1 px-3 uvi-span" style="background-color:${spanColor};">${uvi}</span>`);
 }
 
 function displayForecast(data) {

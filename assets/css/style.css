@@ -1,7 +1,14 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
 header {
     background-image: linear-gradient(to right, #3B6EC3, #230555);
 }
 
 .forecast-box {
     background-color: #33475A;
+}
+
+.uvi-span {
+    font-size: smaller;
 }
