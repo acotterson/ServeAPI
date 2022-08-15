@@ -146,7 +146,7 @@ $("#searchButton").click(function () {
 
 if (localStorage.length !== 0) {
   for (let index = 0; index < localStorage.length; index++) {
-    savedCities = JSON.parse(localStorage.getItem("savedCities"));
+    savedCities.push(JSON.parse(localStorage.getItem("savedCities")));
     if (savedCities.length !== 0) {
       city = savedCities[savedCities.length - 1];
     }
