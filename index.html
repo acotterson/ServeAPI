@@ -37,7 +37,7 @@
             <div class="form-group w-100">
               <input
                 type="citySearch"
-                class="form-control"
+                class="form-control border-dark"
                 id="citySearch"
                 placeholder="San Diego"
               />
@@ -54,45 +54,14 @@
           </div>
           <!-- Saved Search List -->
           <div class="row">
-            <div class="list-group w-100">
-              <button
-                type="button"
-                class="list-group-item list-group-item-action mt-3 mb-2 rounded bg-light text-center"
-              >
-                The current button
-              </button>
-              <button
-                type="button"
-                class="list-group-item list-group-item-action my-2 rounded bg-light text-center"
-              >
-                A second item
-              </button>
-              <button
-                type="button"
-                class="list-group-item list-group-item-action my-2 rounded bg-light text-center"
-              >
-                A third button item
-              </button>
-              <button
-                type="button"
-                class="list-group-item list-group-item-action my-2 rounded bg-light text-center"
-              >
-                A fourth button item
-              </button>
-              <button
-                type="button"
-                class="list-group-item list-group-item-action my-2 rounded bg-light text-center"
-              >
-                A disabled button item
-              </button>
-            </div>
+            <div id="previousSearches" class="list-group w-100"></div>
           </div>
         </div>
         <div class="col">
           <!-- Selected City Main -->
           <div class="row my-3">
             <div class="col-12">
-              <div class="card">
+              <div class="card border-dark">
                 <ul id="dayInfo" class="list-group list-group-flush">
                   <li class="list-group-item h2 border-0 nameDateWeather"></li>
                   <li class="list-group-item border-0 temp"></li>

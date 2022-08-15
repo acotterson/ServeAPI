@@ -1,17 +1,9 @@
-// var lat = 0;
-// var lon = 0;
-
+var savedCities = [];
 var city = "San Diego";
 
 function displayToday(data) {
-  console.log(moment.unix(data.current.dt).format("MM/DD/YYYY"));
-  console.log(data.current.weather[0].icon);
   weatherIcon =
     "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + ".png";
-  console.log(data.current.temp);
-  console.log(data.current.wind_speed);
-  console.log(data.current.humidity);
-  console.log(data.current.uvi);
 
   $("#dayInfo").children().empty();
 
@@ -35,43 +27,38 @@ function displayToday(data) {
     .children(".humid")
     .html("Humidity: " + data.current.humidity + " &percnt;");
 
+  $("#dayInfo").children(".uvi").html("UV Index: ");
+
+  var uvi = data.current.uvi;
+  if (uvi < 3) {
+    spanFontColor = "text-white";
+    spanBackColor = "#157e51";
+  } else if (uvi < 6) {
+    spanFontColor = "text-dark";
+    spanBackColor = "yellow";
+  } else if (uvi < 8) {
+    spanFontColor = "text-dark";
+    spanBackColor = "orange";
+  } else if (uvi < 11) {
+    spanFontColor = "text-dark";
+    spanBackColor = "red";
+  } else {
+    spanFontColor = "text-white";
+    spanBackColor = "purple";
+  }
   $("#dayInfo")
     .children(".uvi")
-    .html("UV Index: ");
-    
-    var uvi = data.current.uvi
-    if (uvi < 3) {
-        spanFontColor = "text-white"
-        spanBackColor = "#157e51";
-
-    } else if (uvi < 6) {
-        spanFontColor = "text-dark";
-        spanBackColor = "yellow";
-    } else if (uvi < 8) {
-        spanFontColor = "text-dark";
-        spanBackColor = "orange";
-    } else if (uvi < 11) {
-        spanFontColor = "text-dark";
-        spanBackColor = "red";
-    } else {
-        spanFontColor = "text-white";
-        spanBackColor = "purple";
-    }
-    $("#dayInfo").children(".uvi").append(`<span class="rounded ${spanFontColor} py-1 px-3 uvi-span" style="background-color:${spanBackColor};">${uvi}</span>`);
+    .append(
+      `<span class="rounded ${spanFontColor} py-1 px-3 uvi-span" style="background-color:${spanBackColor};">${uvi}</span>`
+    );
 }
 
 function displayForecast(data) {
   for (let index = 0; index < 5; index++) {
-    console.log(moment.unix(data.daily[index].dt).format("MM/DD/YYYY"));
-    console.log(data.daily[index].weather[0].icon);
     weatherIcon =
       "http://openweathermap.org/img/wn/" +
       data.daily[index].weather[0].icon +
       ".png";
-    console.log(data.daily[index].temp.day);
-    console.log(data.daily[index].wind_speed);
-    console.log(data.daily[index].humidity);
-    console.log(`.fore${index + 1}`);
     $(`.fore${index + 1}`)
       .children()
       .empty();
@@ -107,7 +94,6 @@ function getInfo() {
     "http://api.openweathermap.org/geo/1.0/direct?q=" +
     city +
     "&limit=1&appid=1a14ca5cc491853ccfe45f332ddb1ec2";
-    console.log(locDataURL);
   $.ajax({
     url: locDataURL,
   }).then(function (data) {
@@ -124,18 +110,42 @@ function getInfo() {
     }).then(function (data) {
       displayToday(data);
       displayForecast(data);
-      console.log(data);
+    });
+  });
+}
+
+function displayPreviousSearches() {
+  var prevButtonDiv = $("#previousSearches");
+  prevButtonDiv.empty();
+  for (let index = 0; index < savedCities.length; index++) {
+    prevButtonDiv.append(
+      `<button type="button" class="list-group-item list-group-item-action mt-3 mb-2 rounded text-center prevButton" style="background-color:lightgray">${savedCities[index]}</button>`
+    );
+  }
+  $(document).ready(function () {
+    $(".prevButton").click(function () {
+      city = $(this).html();
+      console.log(city);
+      getInfo();
     });
   });
 }
 
 $("#searchButton").click(function () {
   city = $("#citySearch").val();
-  getInfo();
-  // localStorage.setItem(
-  //   $(this).siblings("div").html().replace(spaces, ""),
-  //   $(this).siblings("textarea").val()
-  // );
+  if (city != null) {
+    if (!savedCities.includes(city)) {
+      savedCities.push(city);
+      localStorage.setItem("savedCities", JSON.stringify(savedCities));
+    }
+    displayPreviousSearches();
+    getInfo();
+  }
 });
 
+for (let index = 0; index < localStorage.length; index++) {
+  savedCities = JSON.parse(localStorage.getItem("savedCities"));
+}
+
 getInfo();
+displayPreviousSearches();
