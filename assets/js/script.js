@@ -1,6 +1,7 @@
 var savedCities = [];
 var city = "San Diego";
 
+// use api data to display info about today's weather in the main card
 function displayToday(data) {
   weatherIcon =
     "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + ".png";
@@ -11,6 +12,7 @@ function displayToday(data) {
     .children(".nameDateWeather")
     .html(city + moment.unix(data.current.dt).format(" (M/DD/YYYY) "));
 
+    // create the image of the weather icon and append it to the main "today" item
   var img = $('<img id="weather">');
   img.attr("src", weatherIcon);
   img.attr("title", data.current.weather[0].description);
@@ -27,6 +29,7 @@ function displayToday(data) {
     .children(".humid")
     .html("Humidity: " + data.current.humidity + " &percnt;");
 
+    // for the uv background, we add the general stuff and then add a colored span based on uv severity
   $("#dayInfo").children(".uvi").html("UV Index: ");
 
   var uvi = data.current.uvi;
@@ -53,6 +56,7 @@ function displayToday(data) {
     );
 }
 
+// display forecast infor in 5 forecast cards (very similar to displayToday)
 function displayForecast(data) {
   for (let index = 0; index < 5; index++) {
     weatherIcon =
@@ -114,6 +118,7 @@ function getInfo() {
   });
 }
 
+// display the buttons representing cities from previous searches
 function displayPreviousSearches() {
   var prevButtonDiv = $("#previousSearches");
   prevButtonDiv.empty();
@@ -123,6 +128,7 @@ function displayPreviousSearches() {
         `<button type="button" class="list-group-item list-group-item-action mt-3 mb-2 rounded text-center prevButton" style="background-color:lightgray">${savedCities[index]}</button>`
       );
     }
+    // get the button in a clickable state
     $(document).ready(function () {
       $(".prevButton").click(function () {
         city = $(this).html();
@@ -132,24 +138,30 @@ function displayPreviousSearches() {
   }
 }
 
+// display search data on search
 $("#searchButton").click(function () {
   city = $("#citySearch").val();
+//   make sure there's something in the search bar and then add the city to storage
   if (city != null) {
     if (!savedCities.includes(city)) {
       savedCities.push(city);
       localStorage.setItem("savedCities", JSON.stringify(savedCities));
     }
+    // update saved search section
     displayPreviousSearches();
     getInfo();
   }
 });
 
+// on page load, put local storage data into an array for easier access
 if (localStorage.length !== 0) {
   for (let index = 0; index < localStorage.length; index++) {
     savedCities = JSON.parse(localStorage.getItem("savedCities"));
+    // make the default display on load a little more relevant by using the last search item
     city = savedCities[savedCities.length - 1];
   }
 }
 
+// on page load, display the default city info and any saved searches
 getInfo();
 displayPreviousSearches();

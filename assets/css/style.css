@@ -1,14 +1,19 @@
+/* thicker font to match template */
 body {
     font-family: 'Open Sans', sans-serif;
 }
+
+/* for the gradient at the top of the page */
 header {
     background-image: linear-gradient(to right, #3B6EC3, #230555);
 }
 
+/* make our forecast boxes the correct color */
 .forecast-box {
     background-color: #33475A;
 }
 
+/* uvi value has smaller font tofit inside the colored indicator box better */
 .uvi-span {
     font-size: smaller;
 }
