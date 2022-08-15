@@ -117,17 +117,19 @@ function getInfo() {
 function displayPreviousSearches() {
   var prevButtonDiv = $("#previousSearches");
   prevButtonDiv.empty();
-  for (let index = 0; index < savedCities.length; index++) {
-    prevButtonDiv.append(
-      `<button type="button" class="list-group-item list-group-item-action mt-3 mb-2 rounded text-center prevButton" style="background-color:lightgray">${savedCities[index]}</button>`
-    );
-  }
-  $(document).ready(function () {
-    $(".prevButton").click(function () {
-      city = $(this).html();
-      getInfo();
+  if (savedCities.length !== 0) {
+    for (let index = 0; index < savedCities.length; index++) {
+      prevButtonDiv.append(
+        `<button type="button" class="list-group-item list-group-item-action mt-3 mb-2 rounded text-center prevButton" style="background-color:lightgray">${savedCities[index]}</button>`
+      );
+    }
+    $(document).ready(function () {
+      $(".prevButton").click(function () {
+        city = $(this).html();
+        getInfo();
+      });
     });
-  });
+  }
 }
 
 $("#searchButton").click(function () {
