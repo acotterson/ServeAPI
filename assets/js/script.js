@@ -125,7 +125,6 @@ function displayPreviousSearches() {
   $(document).ready(function () {
     $(".prevButton").click(function () {
       city = $(this).html();
-      console.log(city);
       getInfo();
     });
   });
@@ -145,6 +144,8 @@ $("#searchButton").click(function () {
 
 for (let index = 0; index < localStorage.length; index++) {
   savedCities = JSON.parse(localStorage.getItem("savedCities"));
+  if (savedCities.length !== 0)
+    city = savedCities[savedCities.length-1];
 }
 
 getInfo();
