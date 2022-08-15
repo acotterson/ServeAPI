@@ -142,10 +142,11 @@ $("#searchButton").click(function () {
   }
 });
 
-for (let index = 0; index < localStorage.length; index++) {
-  savedCities = JSON.parse(localStorage.getItem("savedCities"));
-  if (savedCities.length !== 0)
-    city = savedCities[savedCities.length-1];
+if (localStorage.length !== 0) {
+  for (let index = 0; index < localStorage.length; index++) {
+    savedCities = JSON.parse(localStorage.getItem("savedCities"));
+    if (savedCities.length !== 0) city = savedCities[savedCities.length - 1];
+  }
 }
 
 getInfo();
