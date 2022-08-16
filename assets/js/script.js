@@ -4,7 +4,7 @@ var city = "San Diego";
 // use api data to display info about today's weather in the main card
 function displayToday(data) {
   weatherIcon =
-    "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + ".png";
+    "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + ".png";
 
   $("#dayInfo").children().empty();
 
@@ -60,7 +60,7 @@ function displayToday(data) {
 function displayForecast(data) {
   for (let index = 0; index < 5; index++) {
     weatherIcon =
-      "http://openweathermap.org/img/wn/" +
+      "https://openweathermap.org/img/wn/" +
       data.daily[index].weather[0].icon +
       ".png";
     $(`.fore${index + 1}`)
