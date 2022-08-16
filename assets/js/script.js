@@ -95,7 +95,7 @@ function displayForecast(data) {
 
 function getInfo() {
   var locDataURL =
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
     city +
     "&limit=1&appid=1a14ca5cc491853ccfe45f332ddb1ec2";
   $.ajax({
